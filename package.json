@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/DanielY-Yoo/react_typescript_template/issues"
   },
-  "homepage": "https://github.com/DanielY-Yoo/react_typescript_template#readme"
+  "homepage": "https://github.com/DanielY-Yoo/react_typescript_template#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "husky": "^4.2.5"
+  }
 }
