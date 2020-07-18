@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -19,11 +20,16 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          // disable type checker - we will use it in fork plugin
-          transpileOnly: true
-        }
+        exclude: /node_modules/
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: !isDevelopment }
+          }
+        ]
       }
     ]
   },
@@ -31,6 +37,10 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js']
   },
   plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html'
+    }),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
