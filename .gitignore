@@ -1,5 +1,6 @@
 # For Development
 public/
+dist/
 
 # Dependency directories
 node_modules/
