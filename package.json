@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --color --config webpack.config.js",
+    "docker-build": "docker build --no-cache -t app .",
+    "docker-run": "docker run --publish 3000:3000 -d app"
   },
   "repository": {
     "type": "git",
