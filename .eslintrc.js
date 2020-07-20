@@ -8,22 +8,24 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'airbnb'
+    'airbnb',
+    'prettier'
   ],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 11,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: [
-    'react'
-  ],
-  "overrides": [
+  plugins: ['react', 'prettier'],
+  rules: {
+    'prettier/prettier': 2
+  },
+  overrides: [
     {
-      files: ["**/*.ts", "**/*.tsx"],
+      files: ['**/*.ts', '**/*.tsx'],
       env: {
         browser: true,
         es2020: true,
@@ -36,16 +38,17 @@ module.exports = {
         'airbnb-typescript',
         'airbnb/hooks',
         'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'prettier'
       ],
-      parser: "@typescript-eslint/parser",
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 11,
-        sourceType: "module",
-        project: "./tsconfig.json"
+        sourceType: 'module',
+        project: './tsconfig.json'
       },
-      plugins: ["react", "@typescript-eslint"]
+      plugins: ['react', '@typescript-eslint', 'prettier']
     }
   ]
 };
