@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --color --config webpack.config.js",
-    "docker-build": "docker build --no-cache -t app .",
-    "docker-run": "docker run --publish 3000:3000 -d app"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --color --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -53,7 +51,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@types/recharts": "^1.8.14",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "recharts": "^1.8.5"
   }
 }
